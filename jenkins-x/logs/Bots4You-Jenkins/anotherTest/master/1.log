@@ -1,0 +1,108 @@
+Step: step-credential-initializer-cvrlg:
+
+{"level":"warn","ts":1565623105.5292222,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/master\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1565623105.5296547,"logger":"fallback-logger","caller":"creds-init/main.go:40","msg":"Credentials initialized."}
+Step: step-working-dir-initializer-zdvdd:
+
+{"level":"warn","ts":1565623107.3705258,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/HEAD: no such file or directory"}
+{"level":"info","ts":1565623107.385997,"logger":"fallback-logger","caller":"bash/main.go:65","msg":"Successfully executed command \"mkdir -p /workspace/source /workspace/source/charts/anothertest\""}
+Step: step-place-tools:
+
+Step: step-git-source-bots4you-jenkins-anothertest-ma-n55k5:
+
+{"level":"warn","ts":1565623122.7655551,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/master\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1565623124.374938,"logger":"fallback-logger","caller":"git/git.go:102","msg":"Successfully cloned https://github.com/Bots4You-Jenkins/anotherTest.git @ v0.0.1 in path /workspace/source"}
+Step: step-git-merge:
+
+WARNING: no SHAs to merge, falling back to initial cloned commit
+Step: step-setup-**-git-credentials:
+
+Generated Git credentials file /workspace/xdg_config/git/credentials
+Step: step-build-python-unittest:
+
+
+----------------------------------------------------------------------
+Ran 0 tests in 0.000s
+
+OK
+Step: step-build-container-build:
+
+[36mINFO[0m[0000] Downloading base image python:onbuild        
+2019/08/12 15:18:48 No matching credentials were found, falling back on anonymous
+[36mINFO[0m[0001] Error while retrieving image from cache: getting file info: stat /workspace/sha256:43780a8431c53f4afd734ad795e03127c0c607337a60639c5903a51a03535c22: no such file or directory 
+[36mINFO[0m[0001] Downloading base image python:onbuild        
+2019/08/12 15:18:50 No matching credentials were found, falling back on anonymous
+[36mINFO[0m[0002] Executing 3 build triggers                   
+[36mINFO[0m[0002] Using files from context: [/workspace/source/requirements.txt] 
+[36mINFO[0m[0002] Checking for cached layer 10.247.208.105:5000/todo/cache:f96ea06eb1dc1e896fb6ba60e374488f43e9918d4fe1cb30c5f26c8dea340a73... 
+2019/08/12 15:18:51 No matching credentials were found, falling back on anonymous
+[36mINFO[0m[0002] No cached layer found for cmd RUN pip install --no-cache-dir -r requirements.txt 
+[36mINFO[0m[0002] Unpacking rootfs as cmd RUN pip install --no-cache-dir -r requirements.txt requires it. 
+[36mINFO[0m[0017] Taking snapshot of full filesystem...        
+[36mINFO[0m[0026] Using files from context: [/workspace/source/requirements.txt] 
+[36mINFO[0m[0026] COPY requirements.txt /usr/src/app/          
+[36mINFO[0m[0026] Taking snapshot of files...                  
+[36mINFO[0m[0026] RUN pip install --no-cache-dir -r requirements.txt 
+[36mINFO[0m[0026] cmd: /bin/sh                                 
+[36mINFO[0m[0026] args: [-c pip install --no-cache-dir -r requirements.txt] 
+You are using pip version 10.0.1, however version 19.2.2 is available.
+You should consider upgrading via the 'pip install --upgrade pip' command.
+[36mINFO[0m[0028] Taking snapshot of full filesystem...        
+[36mINFO[0m[0031] Using files from context: [/workspace/source] 
+[36mINFO[0m[0031] Pushing layer 10.247.208.105:5000/todo/cache:f96ea06eb1dc1e896fb6ba60e374488f43e9918d4fe1cb30c5f26c8dea340a73 to cache now 
+[36mINFO[0m[0031] COPY . /usr/src/app                          
+[36mINFO[0m[0031] Taking snapshot of files...                  
+[36mINFO[0m[0031] Using files from context: [/workspace/source/requirements.txt] 
+[36mINFO[0m[0031] COPY requirements.txt .                      
+[36mINFO[0m[0031] Taking snapshot of files...                  
+[36mINFO[0m[0031] ENV PORT 8080                                
+[36mINFO[0m[0031] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0031] EXPOSE 8080                                  
+[36mINFO[0m[0031] cmd: EXPOSE                                  
+[36mINFO[0m[0031] Adding exposed port: 8080/tcp                
+[36mINFO[0m[0031] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0031] ENTRYPOINT ["python"]                        
+[36mINFO[0m[0031] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0031] CMD ["app.py"]                               
+[36mINFO[0m[0031] No files changed in this command, skipping snapshotting. 
+2019/08/12 15:19:19 pushed blob: sha256:a5856ae54320ba8d59185246a961b6da8e8ed391e779e782fc14ad265aadd1d3
+2019/08/12 15:19:20 pushed blob: sha256:ebde32940ef6278454e5bf6b9ef2f0b43931b935c5417bbb25bc5a13f850dc15
+2019/08/12 15:19:20 10.247.208.105:5000/todo/cache:f96ea06eb1dc1e896fb6ba60e374488f43e9918d4fe1cb30c5f26c8dea340a73: digest: sha256:448526d140ec495ce045dac9ce003e442b67a2adddba69aed26efecb8f8ee716 size: 428
+2019/08/12 15:19:20 pushed blob: sha256:0a8bc545a9dd8121398b511b59154f6ab8a0a5e288a2ca64d9c8d69ad8dcc4e9
+2019/08/12 15:19:20 pushed blob: sha256:c59568c07183ff7dbce7c6607c720cc2687731836b5a0ca6e94ce3f92555356f
+2019/08/12 15:19:20 pushed blob: sha256:658901f06a92ea14dcb9a6deccd1d260be36ca9e5055df3bb3ca7418ccabf61e
+2019/08/12 15:19:20 pushed blob: sha256:b68fb61346b27e39bf2f2bc3b77c48b7575b0fc81e63aea8a4b88b575452c7d0
+2019/08/12 15:19:20 pushed blob: sha256:ebde32940ef6278454e5bf6b9ef2f0b43931b935c5417bbb25bc5a13f850dc15
+2019/08/12 15:19:20 pushed blob: sha256:490280dbcfb772eb5731f059e38fcfacaeb75b4d005af7c249fd51926db2bd62
+2019/08/12 15:19:20 pushed blob: sha256:e2c0fb34dff3a1d32346b92e53fb88a14d1987b402a2348cb379c039687fabe2
+2019/08/12 15:19:20 pushed blob: sha256:e96bc319bce0351d1157092352bc5f85f8800c745388e60e86d06dec99285b45
+2019/08/12 15:19:21 pushed blob: sha256:2d21c767035c4593de8bf7ad9781aa83ba110871d1a50871192f4e3480e6f11d
+2019/08/12 15:19:21 pushed blob: sha256:e10b68fb77e6e91453cd4c1b02e2d77aa23a857cd8eb250617129d074478e1a5
+2019/08/12 15:19:21 pushed blob: sha256:ece825d3308bbf98f708d95475ccd880497a1e2979ff4ef2534d49049a18488f
+2019/08/12 15:19:23 pushed blob: sha256:06854774e2f35e4763103a446112c67322913a6177bea69eb49663e0166e6d6d
+2019/08/12 15:19:23 pushed blob: sha256:1c7fe136a31e13a1c879245672184ced3b9fc590989ba42a522a57b071a9c1aa
+2019/08/12 15:19:24 pushed blob: sha256:f0db43b9b8da254cebc77bf871006df01219e195b9853616b9f708f124a00f3a
+2019/08/12 15:19:24 10.247.208.105:5000/bots4you-jenkins/anothertest:0.0.1: digest: sha256:e68ec4b1482e45c950a522f7d0b7c5e9cd9741288c834736eec3447a480fc956 size: 2385
+Step: step-build-post-build:
+
+no CVE provider running in the current ** namespace so skip adding image to be analysed
+Step: step-promote-changelog:
+
+Converted /workspace/source/charts/anothertest to an unshallow repository
+no previous commit version found so change diff unavailable
+Step: step-promote-helm-release:
+
+WARNING: No $CHART_REPOSITORY defined so using the default value of: http://jenkins-x-chartmuseum:8080
+Adding missing Helm repo: storage.googleapis.com https://storage.googleapis.com/chartmuseum.jenkins-x.io
+Successfully added Helm repository storage.googleapis.com.
+Adding missing Helm repo: jenkins-x-chartmuseum http://jenkins-x-chartmuseum:8080
+Successfully added Helm repository jenkins-x-chartmuseum.
+WARNING: No $CHART_REPOSITORY defined so using the default value of: http://jenkins-x-chartmuseum:8080
+Uploading chart file anothertest-0.0.1.tgz to http://jenkins-x-chartmuseum:8080/api/charts
+Received 201 response: {"saved":true}
+Step: step-promote-**-promote:
+
+WARNING: prow based install so skip waiting for the merge of Pull Requests to go green as currently there is an issue with gettingstatuses from the PR, see https://github.com/jenkins-x/**/issues/2410
+Promoting app anothertest version 0.0.1 to namespace **-staging
+WARNING: Waiting for the fork of *******************/environment-batglen-staging to appear...
+error: pulling environment repo https://github.com/Bots4You-Jenkins/environment-batglen-staging.git into /builder/home/.**/environments: failed to fork GitHub repo Bots4You-Jenkins/environment-batglen-staging to user *******************: gave up waiting for Repository *******************/environment-batglen-staging to appear: GET https://api.github.com/repos/*******************/environment-batglen-staging: 404 Not Found []
