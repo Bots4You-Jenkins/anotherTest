@@ -1,4 +1,4 @@
-CHART_REPO := http://jenkins-x-chartmuseum:8080
+CHART_REPO := http://chartmuseum.jx.jenkins.bots4you.de
 CURRENT=$(pwd)
 NAME := anothertest
 OS := $(shell uname)
